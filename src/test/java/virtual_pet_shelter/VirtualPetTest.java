@@ -170,9 +170,14 @@ public class VirtualPetTest {
 	}
 	
 	@Test
-	public void shouldHaveADescriptionGenerated() {
-		VirtualPet underTest = new VirtualPet("Metamorph", "test", 0, 0, 0);
-		
+	public void shouldHaveADescription() {
+		VirtualPet underTest = new VirtualPet("Metamorph", "test", 0, 0, 0);		
 		Assert.assertEquals("test", underTest.getDescription());
+	}
+	
+	@Test
+	public void shouldGenerateRandomDescription() {
+		VirtualPet underTest = new VirtualPet("Rocky Horror");
+		Assert.assertNotEquals("", underTest.getDescription());
 	}
 }
