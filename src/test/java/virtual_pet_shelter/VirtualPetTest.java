@@ -19,7 +19,7 @@ public class VirtualPetTest {
 
 	@Test
 	public void shouldHaveAllInstances() {
-		VirtualPet underTest = new VirtualPet("", "", 0, 0, 0, 0);
+		VirtualPet underTest = new VirtualPet("", "", 0, 0, 0);
 		String test = underTest.displayStats();
 		Assert.assertEquals("  0 0 0 0", test);
 	}
