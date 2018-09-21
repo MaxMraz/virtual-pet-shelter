@@ -2,12 +2,13 @@ package virtual_pet_shelter;
 
 public class VirtualPet {
 	private String name;
-	private String description;
 	private int hunger;
 	private int restlessness;
 	private int thirst;
 	private boolean dead = false;
 	private int happiness;
+	private String description; //So, we felt like the description should be a procedurally generated string
+	//this way, it humorously describes the creature that has shown up at your shelter's door
 
 	// accessors
 	public String getName() {
@@ -24,6 +25,10 @@ public class VirtualPet {
 
 	public int getRestlessness() {
 		return restlessness;
+	}
+	
+	public String getDescription() {
+		return description;
 	}
 
 	public int getThirst() {
