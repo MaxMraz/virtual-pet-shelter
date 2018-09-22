@@ -1,6 +1,8 @@
 package virtual_pet_shelter;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
 
@@ -58,6 +60,7 @@ public class VirtualPetShelter {
 	}
 
 	public void tick() {
+		List<String> deadList = new ArrayList<String>();
 		for (Entry<String, VirtualPet> currentPet : pets.entrySet()) {
 			if (deaths > 10) {
 				open = false;
@@ -65,10 +68,18 @@ public class VirtualPetShelter {
 			currentPet.getValue().tick();
 
 			if (currentPet.getValue().isDead()) {
-				pets.remove(currentPet.getKey());
 				deaths++;
+				deadList.add(currentPet.getKey());
+
 			}
 		}
+		// remove dead pets from pets collection
+		// You can't remove an element WHILE iterating over it.
+		// Wait, but itsn't that what I'm doing?
+		for (String deadPet : deadList) {
+			pets.remove(deadPet);
+		}
+
 	}
 
 	public boolean isOpen() {

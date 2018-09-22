@@ -1,6 +1,5 @@
 package virtual_pet_shelter;
 
-
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -18,7 +17,8 @@ public class VirtualPetTest {
 	public void shouldHaveAllInstances() {
 		VirtualPet underTest = new VirtualPet("", "", 0, 0, 0);
 		String test = underTest.displayStats();
-		Assert.assertEquals(underTest.getName() + "\r" + underTest.getDescription() + "\rHunger: " + underTest.getHunger() + " || Restlessness: " + underTest.getRestlessness() + " || Thirst: "
+		Assert.assertEquals(underTest.getName() + "\r" + underTest.getDescription() + "\rHunger: "
+				+ underTest.getHunger() + " || Restlessness: " + underTest.getRestlessness() + " || Thirst: "
 				+ underTest.getThirst() + " || Happiness: " + underTest.getHappiness(), test);
 	}
 
@@ -26,7 +26,8 @@ public class VirtualPetTest {
 	public void shouldHaveNameAndDescription() {
 		VirtualPet underTest = new VirtualPet("Chuck", "Cool Rock");
 		String test = underTest.displayStats();
-		Assert.assertEquals(underTest.getName() + "\r" + underTest.getDescription() + "\rHunger: " + underTest.getHunger() + " || Restlessness: " + underTest.getRestlessness() + " || Thirst: "
+		Assert.assertEquals(underTest.getName() + "\r" + underTest.getDescription() + "\rHunger: "
+				+ underTest.getHunger() + " || Restlessness: " + underTest.getRestlessness() + " || Thirst: "
 				+ underTest.getThirst() + " || Happiness: " + underTest.getHappiness(), test);
 	}
 
@@ -168,13 +169,13 @@ public class VirtualPetTest {
 		boolean actual = underTest.isDead();
 		Assert.assertEquals(true, actual);
 	}
-	
+
 	@Test
 	public void shouldHaveADescription() {
-		VirtualPet underTest = new VirtualPet("Metamorph", "test", 0, 0, 0);		
+		VirtualPet underTest = new VirtualPet("Metamorph", "test", 0, 0, 0);
 		Assert.assertEquals("test", underTest.getDescription());
 	}
-	
+
 	@Test
 	public void shouldGenerateRandomDescription() {
 		VirtualPet underTest = new VirtualPet("Rocky Horror");
